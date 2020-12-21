@@ -7,16 +7,16 @@ import event_manager as EM
 #   filtered_file_path: The path to the new filtered file
 def fileCorrect(orig_file_path: str, filtered_file_path: str):
     pass
-    #TODO
+    #TODO 3.1.1
     
-    
+
 # Writes the names of the K youngest students which subscribed 
 # to the event correctly.
 #   in_file_path: The path to the unfiltered subscription file
 #   out_file_path: file path of the output file
 def printYoungestStudents(in_file_path: str, out_file_path: str, k: int) -> int:
     pass
-    #TODO
+    #TODO 3.1.2
     
     
 # Calculates the avg age for a given semester
@@ -24,17 +24,20 @@ def printYoungestStudents(in_file_path: str, out_file_path: str, k: int) -> int:
 #   retuns the avg, else error codes defined.
 def correctAgeAvg(in_file_path: str, semester: int) -> float:
     pass
-    #TODO
+    #TODO 3.1.2
     
 
 #### PART 2 ####
 # Use SWIG :)
+
+#TODO 3.2.1 is creating the interface file eventManager.i
+
 # print the events in the list "events" using the functions from hw1
 #   events: list of dictionaries
 #   file_path: file path of the output file
 def printEventsList(events :list,file_path :str): #em, event_names: list, event_id_list: list, day: int, month: int, year: int):
     pass
-    #TODO   
+    #TODO 3.2.2
     
     
 def testPrintEventsList(file_path :str):
