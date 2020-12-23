@@ -93,12 +93,14 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
 # like [[age, id, name, year, semester],[age, id, name, year, semester],..]
 def allStudentsList(in_file_path):
 
+    # import pdb; pdb.set_trace()
+
     temp_file = "temp_file.txt"
     all_students = [] 
 
     fileCorrect(in_file_path, temp_file)
 
-    tmp_f = open(temp_file, "w")
+    tmp_f = open(temp_file, "r")
 
     for line in tmp_f:
         id, name, age, year, semester = line.split(" ,")
@@ -118,6 +120,7 @@ def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
     f = open(out_file_path, "r")
 
     for i in range(num_student_print):
+        # import pdb; pdb.set_trace()
         id = all_students[i][1]
         name = all_students[i][2]
         age = all_students[i][0]
@@ -139,14 +142,14 @@ def printYoungestStudents(in_file_path: str, out_file_path: str, k: int) -> int:
     pass
     #TODO 3.1.2
 
-    if k < 0:
+    if k <= 0:
         return -1
 
     all_students = allStudentsList(in_file_path)
 
     all_students.sort()
 
-    num_student_print = max(all_students, k)
+    num_student_print = max(len(all_students), k)
 
     printYoungestStudentsToFile(out_file_path, num_student_print, all_students)
 
