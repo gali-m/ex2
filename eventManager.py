@@ -184,7 +184,7 @@ def correctAgeAvg(in_file_path: str, semester: int) -> float:
     pass
     #TODO 3.1.2
 
-    if semester > 1:
+    if semester < 1:
         return -1
 
     all_students = allStudentsList(in_file_path)
