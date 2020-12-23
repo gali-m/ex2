@@ -1,35 +1,45 @@
 #### IMPORTS ####
 import event_manager as EM
 
+# gets submission values and checks if they are valid
+#   id: student's id
+#   name: student's name
+#   age: student's age
+#   birth_year: student's birth year
+#   semester: student's semester
+# 
+# return - True if all parameters are valid,
+#          False otherwise
 def isValid(id, name, age, birth_year, semester):
-    if type(id) is not int or id < 10000000 or id > 99999999:
+    # id checks
+    if not isinstance(id,int) or len(str(id)) != 8:
         return False
     
-    if type(name) is not str:
-        return False
+    # name checks
     words = name.split(" ")
     for word in words:
         if word.isalpha() == False:
             return False
     
-    if type(age) is not int or age < 16 or age > 120:
+    # age checks
+    if not isinstance(age,int) or age < 16 or age > 120:
         return False
     
-    if type(birth_year) is not int or 2020 - age != birth_year:
+    # birth year checks
+    if not isinstance(birth_year,int) or 2020 - age != birth_year:
         return False
     
-    if type(semester) is not int or semester < 1:
+    # semester checks
+    if not isinstance(semester,int) or semester < 1:
         return False
 
-
+# gets a name and returns the name with only one space between each word
+#   name: student's name
+# 
+# return - the cleaned name
 def cleanName(name):
-    clean_name = ''
     words = name.split(" ")
-    for i,word in enumerate(words):
-        if i != 0:
-            clean_name += ' '
-        clean_name += word
-    return clean_name
+    return ' '.join(filter(str.split,words))
 
 
 # Filters a file of students' subscription to specific event:
@@ -41,8 +51,9 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
     src_file = open(orig_file_path,'r')
 
     for line in src_file:
-        id, name, age, birth_year, semester = str.split(",")
-        id = id.strip()
+        # get this submission values
+        id, name, age, birth_year, semester = line.split(",")
+        id = int(id.strip())
         name = cleanName(name)
         age = age.strip()
         birth_year = birth_year.strip()
@@ -50,16 +61,22 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
 
         if isValid(id, name, age, birth_year, semester):
             tmp_list = [id, name, age, birth_year, semester]
+
+            # check if there is already a submission with this id
             for student in list:
                 if student[0] == id:
+                    # remove previous student submission
                     list.remove(student)
+
+            # add the latest submission to the list
             list.append(tmp_list)
 
     src_file.close()
+    # sort by id
     list.sort()
 
     dest_file = open(orig_file_path,'w')
-
+    # write the list to the output file
     for student in list:
         dest_file.write(student[0] + " , " +student[1] + " , " + student[2] + " , " + student[3] + " , " + student[4])
         
