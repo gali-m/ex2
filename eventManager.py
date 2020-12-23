@@ -114,8 +114,8 @@ def allStudentsList(in_file_path):
 #   all_students: list of all students in order [[age, id, name, year, semester],[age, id, name, year, semester],..]
 def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
 
-     f = open(out_file_path, "r")
-    
+    f = open(out_file_path, "r")
+
     for i in range(num_student_print):
         id = all_students[i][1]
         name = all_students[i][2]
@@ -123,7 +123,7 @@ def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
         year = all_students[i][3]
         semester = all_students[i][4]
 
-        new_line = " ,".join(id, name, age, year, semester)
+        new_line = " ,".join([id, name, age, year, semester])
         new_line += "\n"
 
         f.write(new_line)   
