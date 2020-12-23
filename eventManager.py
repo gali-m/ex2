@@ -122,14 +122,8 @@ def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
     f = open(out_file_path, "w")
 
     for i in range(num_student_print):
-        # import pdb; pdb.set_trace()
-        id = all_students[i][1]
-        name = all_students[i][2]
-        age = all_students[i][0]
-        year = all_students[i][3]
-        semester = all_students[i][4]
-
-        new_line = ", ".join([id, name, age, year, semester])
+        
+        new_line = all_students[i][2] + "\n"
 
         f.write(new_line)
 
