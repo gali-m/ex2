@@ -78,7 +78,7 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
     dest_file = open(orig_file_path,'w')
     # write the list to the output file
     for student in list:
-        dest_file.write(" ,".join([student[0], +student[1], student[2], student[3], student[4]]))
+        dest_file.write(" ,".join([student[0], student[1], student[2], student[3], student[4]]))
         dest_file.write("\n")
         
     dest_file.close()
