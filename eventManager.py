@@ -65,6 +65,54 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
         
     dest_file.close()
 
+
+# get correct file of the input file
+# and put all parameters's student in list
+# and append is to all_student list 
+#   in_file_path: The path to the unfiltered subscription file
+# 
+# return - list of all students
+# like [[age, id, name, year, semester],[age, id, name, year, semester],..]
+def allStudentsList(in_file_path):
+
+    temp_file = "temp_file.txt"
+    all_students = [] 
+
+    fileCorrect(in_file_path, temp_file)
+
+    tmp_f = open(temp_file, "w")
+
+    for line in tmp_f:
+        id, name, age, year, semester = line.split(" ,")
+        all_students.append([age, id, name, year, semester])
+
+    tmp_f.close()
+
+    return all_students
+
+# print the youngest students from list to file 
+# order by the age and if equal age by id
+#   out_file_path: file path of the output file
+#   num_student_print: num of students to print
+#   all_students: list of all students in order [[age, id, name, year, semester],[age, id, name, year, semester],..]
+def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
+
+     f = open(out_file_path, "r")
+    
+    for i in range(num_student_print):
+        id = all_students[i][1]
+        name = all_students[i][2]
+        age = all_students[i][0]
+        year = all_students[i][3]
+        semester = all_students[i][4]
+
+        new_line = " ,".join(id, name, age, year, semester)
+        new_line += "\n"
+
+        f.write(new_line)   
+
+    f.close()
+
 # Writes the names of the K youngest students which subscribed 
 # to the event correctly.
 #   in_file_path: The path to the unfiltered subscription file
@@ -72,7 +120,40 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
 def printYoungestStudents(in_file_path: str, out_file_path: str, k: int) -> int:
     pass
     #TODO 3.1.2
-    
+
+    if k < 0:
+        return -1
+
+    all_students = allStudentsList(in_file_path)
+
+    all_students.sort()
+
+    num_student_print = max(all_students, k)
+
+    printYoungestStudentsToFile(out_file_path, num_student_print, all_students)
+
+    return num_student_print
+
+
+# get the age avg of students in semester from list of students 
+# 
+#   all_students: list of all students in order [[age, id, name, year, semester],[age, id, name, year, semester],..]
+#   semester: the semester to check on
+def getAgeAvgFromList(all_students, semester):
+
+    age_sum = 0
+    num_student_in_semester = 0
+
+    for student in all_students:
+        if student[4] == semester:
+            num_student_in_semester += 1
+            age_sum += student[0]
+
+    if num_student_in_semester == 0:
+        return 0
+
+    return age_sum / num_student_in_semester
+
     
 # Calculates the avg age for a given semester
 #   in_file_path: The path to the unfiltered subscription file
@@ -80,8 +161,16 @@ def printYoungestStudents(in_file_path: str, out_file_path: str, k: int) -> int:
 def correctAgeAvg(in_file_path: str, semester: int) -> float:
     pass
     #TODO 3.1.2
-    
 
+    if semester > 1:
+        return -1
+
+    all_students = allStudentsList(in_file_path)
+
+    return getAgeAvgFromList(all_students, semester)
+
+
+    
 #### PART 2 ####
 # Use SWIG :)
 
