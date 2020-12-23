@@ -106,7 +106,7 @@ def allStudentsList(in_file_path):
 
     for line in tmp_f:
         id, name, age, year, semester = line.split(", ")
-        all_students.append([age, id, name, year, semester.strip()])
+        all_students.append([int(age), int(id), name, int(year), int(semester.strip())])
 
     tmp_f.close()
 
@@ -122,7 +122,7 @@ def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
     f = open(out_file_path, "w")
 
     for i in range(num_student_print):
-        
+
         new_line = all_students[i][2] + "\n"
 
         f.write(new_line)
@@ -161,9 +161,9 @@ def getAgeAvgFromList(all_students, semester):
     num_student_in_semester = 0
 
     for student in all_students:
-        if int(student[4]) == semester:
+        if student[4] == semester:
             num_student_in_semester += 1
-            age_sum += int(student[0])
+            age_sum += student[0]
 
     if num_student_in_semester == 0:
         return 0
