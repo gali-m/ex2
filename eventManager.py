@@ -33,6 +33,8 @@ def isValid(id, name, age, birth_year, semester):
     if int(semester) < 1:
         return False
 
+    return True
+
 # gets a name and returns the name with only one space between each word
 #   name: student's name
 # 
@@ -78,7 +80,7 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
     dest_file = open(filtered_file_path,'w')
     # write the list to the output file
     for student in students_list:
-        dest_file.write(" ,".join([student[0], student[1], student[2], student[3], student[4]]))
+        dest_file.write(", ".join([student[0], student[1], student[2], student[3], student[4]]))
         dest_file.write("\n")
         
     dest_file.close()
@@ -103,7 +105,7 @@ def allStudentsList(in_file_path):
     tmp_f = open(temp_file, "r")
 
     for line in tmp_f:
-        id, name, age, year, semester = line.split(" ,")
+        id, name, age, year, semester = line.split(", ")
         all_students.append([age, id, name, year, semester])
 
     tmp_f.close()
@@ -127,7 +129,7 @@ def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
         year = all_students[i][3]
         semester = all_students[i][4]
 
-        new_line = " ,".join([id, name, age, year, semester])
+        new_line = ", ".join([id, name, age, year, semester])
         new_line += "\n"
 
         f.write(new_line)   
