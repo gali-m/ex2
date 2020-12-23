@@ -106,7 +106,7 @@ def allStudentsList(in_file_path):
 
     for line in tmp_f:
         id, name, age, year, semester = line.split(", ")
-        all_students.append([age, id, name, year, semester])
+        all_students.append([age, id, name, year, semester.strip()])
 
     tmp_f.close()
 
@@ -167,9 +167,9 @@ def getAgeAvgFromList(all_students, semester):
     num_student_in_semester = 0
 
     for student in all_students:
-        if student[4] == semester:
+        if int(student[4]) == semester:
             num_student_in_semester += 1
-            age_sum += student[0]
+            age_sum += int(student[0])
 
     if num_student_in_semester == 0:
         return 0
