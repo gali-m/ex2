@@ -150,7 +150,7 @@ def printYoungestStudents(in_file_path: str, out_file_path: str, k: int) -> int:
 
     all_students.sort()
 
-    num_student_print = max(len(all_students), k)
+    num_student_print = min(len(all_students), k)
 
     printYoungestStudentsToFile(out_file_path, num_student_print, all_students)
 
