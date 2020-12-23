@@ -46,7 +46,7 @@ def cleanName(name):
 #   orig_file_path: The path to the unfiltered subscription file
 #   filtered_file_path: The path to the new filtered file
 def fileCorrect(orig_file_path: str, filtered_file_path: str):
-    list=[]
+    students_list=[]
 
     src_file = open(orig_file_path,'r')
 
@@ -63,21 +63,21 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
             tmp_list = [id, name, age, birth_year, semester]
 
             # check if there is already a submission with this id
-            for student in list:
+            for student in students_list:
                 if student[0] == id:
                     # remove previous student submission
-                    list.remove(student)
+                    students_list.remove(student)
 
             # add the latest submission to the list
-            list.append(tmp_list)
+            students_list.append(tmp_list)
 
     src_file.close()
     # sort by id
-    list.sort()
+    students_list.sort()
 
     dest_file = open(orig_file_path,'w')
     # write the list to the output file
-    for student in list:
+    for student in students_list:
         dest_file.write(" ,".join([student[0], student[1], student[2], student[3], student[4]]))
         dest_file.write("\n")
         
