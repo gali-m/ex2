@@ -12,7 +12,7 @@
 #          False otherwise
 def isValid(id, name, age, birth_year, semester):
     # id checks
-    if not isinstance(id,int) or len(str(id)) != 8:
+    if id.startswith("0") or len(id) != 8:
         return False
     
     # name checks
@@ -22,15 +22,15 @@ def isValid(id, name, age, birth_year, semester):
             return False
     
     # age checks
-    if not isinstance(age,int) or age < 16 or age > 120:
+    if int(age) < 16 or int(age) > 120:
         return False
     
     # birth year checks
-    if not isinstance(birth_year,int) or 2020 - age != birth_year:
+    if 2020 - int(age) != int(birth_year):
         return False
     
     # semester checks
-    if not isinstance(semester,int) or semester < 1:
+    if int(semester) < 1:
         return False
 
 # gets a name and returns the name with only one space between each word
@@ -53,7 +53,7 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
     for line in src_file:
         # get this submission values
         id, name, age, birth_year, semester = line.split(",")
-        id = int(id.strip())
+        id = id.strip()
         name = cleanName(name)
         age = age.strip()
         birth_year = birth_year.strip()
