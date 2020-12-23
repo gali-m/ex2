@@ -75,7 +75,7 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
     # sort by id
     students_list.sort()
 
-    dest_file = open(orig_file_path,'w')
+    dest_file = open(filtered_file_path,'w')
     # write the list to the output file
     for student in students_list:
         dest_file.write(" ,".join([student[0], student[1], student[2], student[3], student[4]]))
