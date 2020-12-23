@@ -119,7 +119,7 @@ def allStudentsList(in_file_path):
 #   all_students: list of all students in order [[age, id, name, year, semester],[age, id, name, year, semester],..]
 def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
 
-    f = open(out_file_path, "r")
+    f = open(out_file_path, "w")
 
     for i in range(num_student_print):
         # import pdb; pdb.set_trace()
@@ -130,9 +130,8 @@ def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
         semester = all_students[i][4]
 
         new_line = ", ".join([id, name, age, year, semester])
-        new_line += "\n"
 
-        f.write(new_line)   
+        f.write(new_line)
 
     f.close()
 
