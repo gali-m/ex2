@@ -2925,9 +2925,9 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_Date swig_types[0]
-#define SWIGTYPE_p_EventManager swig_types[1]
-#define SWIGTYPE_p_EventManagerResult swig_types[2]
+#define SWIGTYPE_p_Date_t swig_types[0]
+#define SWIGTYPE_p_EventManagerResult_t swig_types[1]
+#define SWIGTYPE_p_EventManager_t swig_types[2]
 #define SWIGTYPE_p_char swig_types[3]
 #define SWIGTYPE_p_int swig_types[4]
 static swig_type_info *swig_types[6];
@@ -2963,9 +2963,8 @@ static swig_module_info swig_module = {swig_types, 5, 0, 0, 0, 0};
 #define SWIG_as_voidptrptr(a) ((void)SWIG_as_voidptr(*a),(void**)(a)) 
 
 
-#define SWIG_FILE_WITH_INIT
-#include "event_manager.h"
 #include "date.h"
+#include "event_manager.h"
 
 
 #include <limits.h>
@@ -3281,8 +3280,8 @@ SWIGINTERN PyObject *_wrap_dateCreate(PyObject *SWIGUNUSEDPARM(self), PyObject *
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "dateCreate" "', argument " "3"" of type '" "int""'");
   } 
   arg3 = (int)(val3);
-  result = dateCreate(arg1,arg2,arg3);
-  resultobj = SWIG_NewPointerObj((Date *)memcpy((Date *)malloc(sizeof(Date)),&result,sizeof(Date)), SWIGTYPE_p_Date, SWIG_POINTER_OWN |  0 );
+  result = (Date)dateCreate(arg1,arg2,arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Date_t, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -3291,23 +3290,17 @@ fail:
 
 SWIGINTERN PyObject *_wrap_dateDestroy(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  Date arg1 ;
-  void *argp1 ;
+  Date arg1 = (Date) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:dateDestroy",&obj0)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateDestroy" "', argument " "1"" of type '" "Date""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "dateDestroy" "', argument " "1"" of type '" "Date""'");
-    } else {
-      arg1 = *((Date *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateDestroy" "', argument " "1"" of type '" "Date""'"); 
   }
+  arg1 = (Date)(argp1);
   dateDestroy(arg1);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -3318,26 +3311,20 @@ fail:
 
 SWIGINTERN PyObject *_wrap_dateCopy(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  Date arg1 ;
-  void *argp1 ;
+  Date arg1 = (Date) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   Date result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:dateCopy",&obj0)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateCopy" "', argument " "1"" of type '" "Date""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "dateCopy" "', argument " "1"" of type '" "Date""'");
-    } else {
-      arg1 = *((Date *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateCopy" "', argument " "1"" of type '" "Date""'"); 
   }
-  result = dateCopy(arg1);
-  resultobj = SWIG_NewPointerObj((Date *)memcpy((Date *)malloc(sizeof(Date)),&result,sizeof(Date)), SWIGTYPE_p_Date, SWIG_POINTER_OWN |  0 );
+  arg1 = (Date)(argp1);
+  result = (Date)dateCopy(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Date_t, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -3346,11 +3333,11 @@ fail:
 
 SWIGINTERN PyObject *_wrap_dateGet(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  Date arg1 ;
+  Date arg1 = (Date) 0 ;
   int *arg2 = (int *) 0 ;
   int *arg3 = (int *) 0 ;
   int *arg4 = (int *) 0 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
@@ -3365,17 +3352,11 @@ SWIGINTERN PyObject *_wrap_dateGet(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   bool result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOOO:dateGet",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateGet" "', argument " "1"" of type '" "Date""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "dateGet" "', argument " "1"" of type '" "Date""'");
-    } else {
-      arg1 = *((Date *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateGet" "', argument " "1"" of type '" "Date""'"); 
   }
+  arg1 = (Date)(argp1);
   res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_int, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "dateGet" "', argument " "2"" of type '" "int *""'"); 
@@ -3401,39 +3382,27 @@ fail:
 
 SWIGINTERN PyObject *_wrap_dateCompare(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  Date arg1 ;
-  Date arg2 ;
-  void *argp1 ;
+  Date arg1 = (Date) 0 ;
+  Date arg2 = (Date) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 ;
+  void *argp2 = 0 ;
   int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   int result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:dateCompare",&obj0,&obj1)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateCompare" "', argument " "1"" of type '" "Date""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "dateCompare" "', argument " "1"" of type '" "Date""'");
-    } else {
-      arg1 = *((Date *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateCompare" "', argument " "1"" of type '" "Date""'"); 
   }
-  {
-    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "dateCompare" "', argument " "2"" of type '" "Date""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "dateCompare" "', argument " "2"" of type '" "Date""'");
-    } else {
-      arg2 = *((Date *)(argp2));
-    }
+  arg1 = (Date)(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "dateCompare" "', argument " "2"" of type '" "Date""'"); 
   }
+  arg2 = (Date)(argp2);
   result = (int)dateCompare(arg1,arg2);
   resultobj = SWIG_From_int((int)(result));
   return resultobj;
@@ -3444,23 +3413,17 @@ fail:
 
 SWIGINTERN PyObject *_wrap_dateTick(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  Date arg1 ;
-  void *argp1 ;
+  Date arg1 = (Date) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:dateTick",&obj0)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateTick" "', argument " "1"" of type '" "Date""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "dateTick" "', argument " "1"" of type '" "Date""'");
-    } else {
-      arg1 = *((Date *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "dateTick" "', argument " "1"" of type '" "Date""'"); 
   }
+  arg1 = (Date)(argp1);
   dateTick(arg1);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -3471,26 +3434,20 @@ fail:
 
 SWIGINTERN PyObject *_wrap_createEventManager(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  Date arg1 ;
-  void *argp1 ;
+  Date arg1 = (Date) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   EventManager result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:createEventManager",&obj0)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "createEventManager" "', argument " "1"" of type '" "Date""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "createEventManager" "', argument " "1"" of type '" "Date""'");
-    } else {
-      arg1 = *((Date *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "createEventManager" "', argument " "1"" of type '" "Date""'"); 
   }
-  result = createEventManager(arg1);
-  resultobj = SWIG_NewPointerObj((EventManager *)memcpy((EventManager *)malloc(sizeof(EventManager)),&result,sizeof(EventManager)), SWIGTYPE_p_EventManager, SWIG_POINTER_OWN |  0 );
+  arg1 = (Date)(argp1);
+  result = (EventManager)createEventManager(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_EventManager_t, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -3499,23 +3456,17 @@ fail:
 
 SWIGINTERN PyObject *_wrap_destroyEventManager(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
-  void *argp1 ;
+  EventManager arg1 = (EventManager) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:destroyEventManager",&obj0)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "destroyEventManager" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "destroyEventManager" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "destroyEventManager" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   destroyEventManager(arg1);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -3526,16 +3477,16 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emAddEventByDate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   char *arg2 = (char *) 0 ;
-  Date arg3 ;
+  Date arg3 = (Date) 0 ;
   int arg4 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 ;
   char *buf2 = 0 ;
   int alloc2 = 0 ;
-  void *argp3 ;
+  void *argp3 = 0 ;
   int res3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
@@ -3546,40 +3497,28 @@ SWIGINTERN PyObject *_wrap_emAddEventByDate(PyObject *SWIGUNUSEDPARM(self), PyOb
   EventManagerResult result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOOO:emAddEventByDate",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emAddEventByDate" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emAddEventByDate" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emAddEventByDate" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "emAddEventByDate" "', argument " "2"" of type '" "char *""'");
   }
   arg2 = (char *)(buf2);
-  {
-    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "emAddEventByDate" "', argument " "3"" of type '" "Date""'"); 
-    }  
-    if (!argp3) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emAddEventByDate" "', argument " "3"" of type '" "Date""'");
-    } else {
-      arg3 = *((Date *)(argp3));
-    }
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "emAddEventByDate" "', argument " "3"" of type '" "Date""'"); 
   }
+  arg3 = (Date)(argp3);
   ecode4 = SWIG_AsVal_int(obj3, &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "emAddEventByDate" "', argument " "4"" of type '" "int""'");
   } 
   arg4 = (int)(val4);
-  result = emAddEventByDate(arg1,arg2,arg3,arg4);
-  resultobj = SWIG_NewPointerObj((EventManagerResult *)memcpy((EventManagerResult *)malloc(sizeof(EventManagerResult)),&result,sizeof(EventManagerResult)), SWIGTYPE_p_EventManagerResult, SWIG_POINTER_OWN |  0 );
+  result = (EventManagerResult)emAddEventByDate(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_From_int((int)(result));
   if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return resultobj;
 fail:
@@ -3590,11 +3529,11 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emAddEventByDiff(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   char *arg2 = (char *) 0 ;
   int arg3 ;
   int arg4 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 ;
   char *buf2 = 0 ;
@@ -3610,17 +3549,11 @@ SWIGINTERN PyObject *_wrap_emAddEventByDiff(PyObject *SWIGUNUSEDPARM(self), PyOb
   EventManagerResult result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOOO:emAddEventByDiff",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emAddEventByDiff" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emAddEventByDiff" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emAddEventByDiff" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "emAddEventByDiff" "', argument " "2"" of type '" "char *""'");
@@ -3636,8 +3569,8 @@ SWIGINTERN PyObject *_wrap_emAddEventByDiff(PyObject *SWIGUNUSEDPARM(self), PyOb
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "emAddEventByDiff" "', argument " "4"" of type '" "int""'");
   } 
   arg4 = (int)(val4);
-  result = emAddEventByDiff(arg1,arg2,arg3,arg4);
-  resultobj = SWIG_NewPointerObj((EventManagerResult *)memcpy((EventManagerResult *)malloc(sizeof(EventManagerResult)),&result,sizeof(EventManagerResult)), SWIGTYPE_p_EventManagerResult, SWIG_POINTER_OWN |  0 );
+  result = (EventManagerResult)emAddEventByDiff(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_From_int((int)(result));
   if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return resultobj;
 fail:
@@ -3648,9 +3581,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emRemoveEvent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   int arg2 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
@@ -3659,24 +3592,18 @@ SWIGINTERN PyObject *_wrap_emRemoveEvent(PyObject *SWIGUNUSEDPARM(self), PyObjec
   EventManagerResult result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:emRemoveEvent",&obj0,&obj1)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emRemoveEvent" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emRemoveEvent" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emRemoveEvent" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "emRemoveEvent" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = (int)(val2);
-  result = emRemoveEvent(arg1,arg2);
-  resultobj = SWIG_NewPointerObj((EventManagerResult *)memcpy((EventManagerResult *)malloc(sizeof(EventManagerResult)),&result,sizeof(EventManagerResult)), SWIGTYPE_p_EventManagerResult, SWIG_POINTER_OWN |  0 );
+  result = (EventManagerResult)emRemoveEvent(arg1,arg2);
+  resultobj = SWIG_From_int((int)(result));
   return resultobj;
 fail:
   return NULL;
@@ -3685,14 +3612,14 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emChangeEventDate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   int arg2 ;
-  Date arg3 ;
-  void *argp1 ;
+  Date arg3 = (Date) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
-  void *argp3 ;
+  void *argp3 = 0 ;
   int res3 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
@@ -3700,35 +3627,23 @@ SWIGINTERN PyObject *_wrap_emChangeEventDate(PyObject *SWIGUNUSEDPARM(self), PyO
   EventManagerResult result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:emChangeEventDate",&obj0,&obj1,&obj2)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emChangeEventDate" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emChangeEventDate" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emChangeEventDate" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "emChangeEventDate" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = (int)(val2);
-  {
-    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_Date,  0 );
-    if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "emChangeEventDate" "', argument " "3"" of type '" "Date""'"); 
-    }  
-    if (!argp3) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emChangeEventDate" "', argument " "3"" of type '" "Date""'");
-    } else {
-      arg3 = *((Date *)(argp3));
-    }
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_Date_t, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "emChangeEventDate" "', argument " "3"" of type '" "Date""'"); 
   }
-  result = emChangeEventDate(arg1,arg2,arg3);
-  resultobj = SWIG_NewPointerObj((EventManagerResult *)memcpy((EventManagerResult *)malloc(sizeof(EventManagerResult)),&result,sizeof(EventManagerResult)), SWIGTYPE_p_EventManagerResult, SWIG_POINTER_OWN |  0 );
+  arg3 = (Date)(argp3);
+  result = (EventManagerResult)emChangeEventDate(arg1,arg2,arg3);
+  resultobj = SWIG_From_int((int)(result));
   return resultobj;
 fail:
   return NULL;
@@ -3737,10 +3652,10 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emAddMember(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   char *arg2 = (char *) 0 ;
   int arg3 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 ;
   char *buf2 = 0 ;
@@ -3753,17 +3668,11 @@ SWIGINTERN PyObject *_wrap_emAddMember(PyObject *SWIGUNUSEDPARM(self), PyObject 
   EventManagerResult result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:emAddMember",&obj0,&obj1,&obj2)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emAddMember" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emAddMember" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emAddMember" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "emAddMember" "', argument " "2"" of type '" "char *""'");
@@ -3774,8 +3683,8 @@ SWIGINTERN PyObject *_wrap_emAddMember(PyObject *SWIGUNUSEDPARM(self), PyObject 
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "emAddMember" "', argument " "3"" of type '" "int""'");
   } 
   arg3 = (int)(val3);
-  result = emAddMember(arg1,arg2,arg3);
-  resultobj = SWIG_NewPointerObj((EventManagerResult *)memcpy((EventManagerResult *)malloc(sizeof(EventManagerResult)),&result,sizeof(EventManagerResult)), SWIGTYPE_p_EventManagerResult, SWIG_POINTER_OWN |  0 );
+  result = (EventManagerResult)emAddMember(arg1,arg2,arg3);
+  resultobj = SWIG_From_int((int)(result));
   if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return resultobj;
 fail:
@@ -3786,10 +3695,10 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emAddMemberToEvent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   int arg2 ;
   int arg3 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
@@ -3801,17 +3710,11 @@ SWIGINTERN PyObject *_wrap_emAddMemberToEvent(PyObject *SWIGUNUSEDPARM(self), Py
   EventManagerResult result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:emAddMemberToEvent",&obj0,&obj1,&obj2)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emAddMemberToEvent" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emAddMemberToEvent" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emAddMemberToEvent" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "emAddMemberToEvent" "', argument " "2"" of type '" "int""'");
@@ -3822,8 +3725,8 @@ SWIGINTERN PyObject *_wrap_emAddMemberToEvent(PyObject *SWIGUNUSEDPARM(self), Py
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "emAddMemberToEvent" "', argument " "3"" of type '" "int""'");
   } 
   arg3 = (int)(val3);
-  result = emAddMemberToEvent(arg1,arg2,arg3);
-  resultobj = SWIG_NewPointerObj((EventManagerResult *)memcpy((EventManagerResult *)malloc(sizeof(EventManagerResult)),&result,sizeof(EventManagerResult)), SWIGTYPE_p_EventManagerResult, SWIG_POINTER_OWN |  0 );
+  result = (EventManagerResult)emAddMemberToEvent(arg1,arg2,arg3);
+  resultobj = SWIG_From_int((int)(result));
   return resultobj;
 fail:
   return NULL;
@@ -3832,10 +3735,10 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emRemoveMemberFromEvent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   int arg2 ;
   int arg3 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
@@ -3847,17 +3750,11 @@ SWIGINTERN PyObject *_wrap_emRemoveMemberFromEvent(PyObject *SWIGUNUSEDPARM(self
   EventManagerResult result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:emRemoveMemberFromEvent",&obj0,&obj1,&obj2)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emRemoveMemberFromEvent" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emRemoveMemberFromEvent" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emRemoveMemberFromEvent" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "emRemoveMemberFromEvent" "', argument " "2"" of type '" "int""'");
@@ -3868,8 +3765,8 @@ SWIGINTERN PyObject *_wrap_emRemoveMemberFromEvent(PyObject *SWIGUNUSEDPARM(self
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "emRemoveMemberFromEvent" "', argument " "3"" of type '" "int""'");
   } 
   arg3 = (int)(val3);
-  result = emRemoveMemberFromEvent(arg1,arg2,arg3);
-  resultobj = SWIG_NewPointerObj((EventManagerResult *)memcpy((EventManagerResult *)malloc(sizeof(EventManagerResult)),&result,sizeof(EventManagerResult)), SWIGTYPE_p_EventManagerResult, SWIG_POINTER_OWN |  0 );
+  result = (EventManagerResult)emRemoveMemberFromEvent(arg1,arg2,arg3);
+  resultobj = SWIG_From_int((int)(result));
   return resultobj;
 fail:
   return NULL;
@@ -3878,9 +3775,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emTick(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   int arg2 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
@@ -3889,24 +3786,18 @@ SWIGINTERN PyObject *_wrap_emTick(PyObject *SWIGUNUSEDPARM(self), PyObject *args
   EventManagerResult result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:emTick",&obj0,&obj1)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emTick" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emTick" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emTick" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "emTick" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = (int)(val2);
-  result = emTick(arg1,arg2);
-  resultobj = SWIG_NewPointerObj((EventManagerResult *)memcpy((EventManagerResult *)malloc(sizeof(EventManagerResult)),&result,sizeof(EventManagerResult)), SWIGTYPE_p_EventManagerResult, SWIG_POINTER_OWN |  0 );
+  result = (EventManagerResult)emTick(arg1,arg2);
+  resultobj = SWIG_From_int((int)(result));
   return resultobj;
 fail:
   return NULL;
@@ -3915,24 +3806,18 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emGetEventsAmount(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
-  void *argp1 ;
+  EventManager arg1 = (EventManager) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   int result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:emGetEventsAmount",&obj0)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emGetEventsAmount" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emGetEventsAmount" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emGetEventsAmount" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   result = (int)emGetEventsAmount(arg1);
   resultobj = SWIG_From_int((int)(result));
   return resultobj;
@@ -3943,24 +3828,18 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emGetNextEvent(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
-  void *argp1 ;
+  EventManager arg1 = (EventManager) 0 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   char *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:emGetNextEvent",&obj0)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emGetNextEvent" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emGetNextEvent" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emGetNextEvent" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   result = (char *)emGetNextEvent(arg1);
   resultobj = SWIG_FromCharPtr((const char *)result);
   return resultobj;
@@ -3971,9 +3850,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emPrintAllEvents(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   char *arg2 = (char *) 0 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 ;
   char *buf2 = 0 ;
@@ -3982,17 +3861,11 @@ SWIGINTERN PyObject *_wrap_emPrintAllEvents(PyObject *SWIGUNUSEDPARM(self), PyOb
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:emPrintAllEvents",&obj0,&obj1)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emPrintAllEvents" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emPrintAllEvents" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emPrintAllEvents" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "emPrintAllEvents" "', argument " "2"" of type '" "char const *""'");
@@ -4010,9 +3883,9 @@ fail:
 
 SWIGINTERN PyObject *_wrap_emPrintAllResponsibleMembers(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  EventManager arg1 ;
+  EventManager arg1 = (EventManager) 0 ;
   char *arg2 = (char *) 0 ;
-  void *argp1 ;
+  void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 ;
   char *buf2 = 0 ;
@@ -4021,17 +3894,11 @@ SWIGINTERN PyObject *_wrap_emPrintAllResponsibleMembers(PyObject *SWIGUNUSEDPARM
   PyObject * obj1 = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:emPrintAllResponsibleMembers",&obj0,&obj1)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_EventManager,  0 );
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emPrintAllResponsibleMembers" "', argument " "1"" of type '" "EventManager""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "emPrintAllResponsibleMembers" "', argument " "1"" of type '" "EventManager""'");
-    } else {
-      arg1 = *((EventManager *)(argp1));
-    }
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EventManager_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "emPrintAllResponsibleMembers" "', argument " "1"" of type '" "EventManager""'"); 
   }
+  arg1 = (EventManager)(argp1);
   res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "emPrintAllResponsibleMembers" "', argument " "2"" of type '" "char const *""'");
@@ -4075,30 +3942,30 @@ static PyMethodDef SwigMethods[] = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
-static swig_type_info _swigt__p_Date = {"_p_Date", "Date *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_EventManager = {"_p_EventManager", "EventManager *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_EventManagerResult = {"_p_EventManagerResult", "EventManagerResult *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Date_t = {"_p_Date_t", "Date|struct Date_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_EventManagerResult_t = {"_p_EventManagerResult_t", "EventManagerResult *|enum EventManagerResult_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_EventManager_t = {"_p_EventManager_t", "EventManager|struct EventManager_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
-  &_swigt__p_Date,
-  &_swigt__p_EventManager,
-  &_swigt__p_EventManagerResult,
+  &_swigt__p_Date_t,
+  &_swigt__p_EventManagerResult_t,
+  &_swigt__p_EventManager_t,
   &_swigt__p_char,
   &_swigt__p_int,
 };
 
-static swig_cast_info _swigc__p_Date[] = {  {&_swigt__p_Date, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_EventManager[] = {  {&_swigt__p_EventManager, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_EventManagerResult[] = {  {&_swigt__p_EventManagerResult, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Date_t[] = {  {&_swigt__p_Date_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_EventManagerResult_t[] = {  {&_swigt__p_EventManagerResult_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_EventManager_t[] = {  {&_swigt__p_EventManager_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
-  _swigc__p_Date,
-  _swigc__p_EventManager,
-  _swigc__p_EventManagerResult,
+  _swigc__p_Date_t,
+  _swigc__p_EventManagerResult_t,
+  _swigc__p_EventManager_t,
   _swigc__p_char,
   _swigc__p_int,
 };
@@ -4785,6 +4652,21 @@ SWIG_init(void) {
   
   SWIG_InstallConstants(d,swig_const_table);
   
+  SWIG_Python_SetConstant(d, "EM_SUCCESS",SWIG_From_int((int)(EM_SUCCESS)));
+  SWIG_Python_SetConstant(d, "EM_OUT_OF_MEMORY",SWIG_From_int((int)(EM_OUT_OF_MEMORY)));
+  SWIG_Python_SetConstant(d, "EM_NULL_ARGUMENT",SWIG_From_int((int)(EM_NULL_ARGUMENT)));
+  SWIG_Python_SetConstant(d, "EM_INVALID_DATE",SWIG_From_int((int)(EM_INVALID_DATE)));
+  SWIG_Python_SetConstant(d, "EM_INVALID_EVENT_ID",SWIG_From_int((int)(EM_INVALID_EVENT_ID)));
+  SWIG_Python_SetConstant(d, "EM_EVENT_ALREADY_EXISTS",SWIG_From_int((int)(EM_EVENT_ALREADY_EXISTS)));
+  SWIG_Python_SetConstant(d, "EM_EVENT_ID_ALREADY_EXISTS",SWIG_From_int((int)(EM_EVENT_ID_ALREADY_EXISTS)));
+  SWIG_Python_SetConstant(d, "EM_EVENT_NOT_EXISTS",SWIG_From_int((int)(EM_EVENT_NOT_EXISTS)));
+  SWIG_Python_SetConstant(d, "EM_EVENT_ID_NOT_EXISTS",SWIG_From_int((int)(EM_EVENT_ID_NOT_EXISTS)));
+  SWIG_Python_SetConstant(d, "EM_INVALID_MEMBER_ID",SWIG_From_int((int)(EM_INVALID_MEMBER_ID)));
+  SWIG_Python_SetConstant(d, "EM_MEMBER_ID_ALREADY_EXISTS",SWIG_From_int((int)(EM_MEMBER_ID_ALREADY_EXISTS)));
+  SWIG_Python_SetConstant(d, "EM_MEMBER_ID_NOT_EXISTS",SWIG_From_int((int)(EM_MEMBER_ID_NOT_EXISTS)));
+  SWIG_Python_SetConstant(d, "EM_EVENT_AND_MEMBER_ALREADY_LINKED",SWIG_From_int((int)(EM_EVENT_AND_MEMBER_ALREADY_LINKED)));
+  SWIG_Python_SetConstant(d, "EM_EVENT_AND_MEMBER_NOT_LINKED",SWIG_From_int((int)(EM_EVENT_AND_MEMBER_NOT_LINKED)));
+  SWIG_Python_SetConstant(d, "EM_ERROR",SWIG_From_int((int)(EM_ERROR)));
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

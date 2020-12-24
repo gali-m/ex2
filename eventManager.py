@@ -202,7 +202,7 @@ def printEventsList(events :list,file_path :str): #em, event_names: list, event_
     
     em = EM.createEventManager(min_date)
     for event in events:
-        result = emAddEventByDate(em, event["name"], event["date"], event["id"])
+        result = EM.emAddEventByDate(em, event["name"], event["date"], event["id"])
         # if result != EM_RESULT:
         #     EM.destroyEventManager(em)
         #     return NULL

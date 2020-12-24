@@ -91,6 +91,21 @@ dateCompare = _event_manager.dateCompare
 def dateTick(*args):
   return _event_manager.dateTick(*args)
 dateTick = _event_manager.dateTick
+EM_SUCCESS = _event_manager.EM_SUCCESS
+EM_OUT_OF_MEMORY = _event_manager.EM_OUT_OF_MEMORY
+EM_NULL_ARGUMENT = _event_manager.EM_NULL_ARGUMENT
+EM_INVALID_DATE = _event_manager.EM_INVALID_DATE
+EM_INVALID_EVENT_ID = _event_manager.EM_INVALID_EVENT_ID
+EM_EVENT_ALREADY_EXISTS = _event_manager.EM_EVENT_ALREADY_EXISTS
+EM_EVENT_ID_ALREADY_EXISTS = _event_manager.EM_EVENT_ID_ALREADY_EXISTS
+EM_EVENT_NOT_EXISTS = _event_manager.EM_EVENT_NOT_EXISTS
+EM_EVENT_ID_NOT_EXISTS = _event_manager.EM_EVENT_ID_NOT_EXISTS
+EM_INVALID_MEMBER_ID = _event_manager.EM_INVALID_MEMBER_ID
+EM_MEMBER_ID_ALREADY_EXISTS = _event_manager.EM_MEMBER_ID_ALREADY_EXISTS
+EM_MEMBER_ID_NOT_EXISTS = _event_manager.EM_MEMBER_ID_NOT_EXISTS
+EM_EVENT_AND_MEMBER_ALREADY_LINKED = _event_manager.EM_EVENT_AND_MEMBER_ALREADY_LINKED
+EM_EVENT_AND_MEMBER_NOT_LINKED = _event_manager.EM_EVENT_AND_MEMBER_NOT_LINKED
+EM_ERROR = _event_manager.EM_ERROR
 
 def createEventManager(*args):
   return _event_manager.createEventManager(*args)
