@@ -95,8 +95,6 @@ def fileCorrect(orig_file_path: str, filtered_file_path: str):
 # like [[age, id, name, year, semester],[age, id, name, year, semester],..]
 def allStudentsList(in_file_path):
 
-    # import pdb; pdb.set_trace()
-
     temp_file = "temp_file.txt"
     all_students = [] 
 
@@ -134,8 +132,6 @@ def printYoungestStudentsToFile(out_file_path, num_student_print, all_students):
 #   in_file_path: The path to the unfiltered subscription file
 #   out_file_path: file path of the output file
 def printYoungestStudents(in_file_path: str, out_file_path: str, k: int) -> int:
-    pass
-    #TODO 3.1.2
 
     if k <= 0:
         return -1
@@ -175,8 +171,6 @@ def getAgeAvgFromList(all_students, semester):
 #   in_file_path: The path to the unfiltered subscription file
 #   retuns the avg, else error codes defined.
 def correctAgeAvg(in_file_path: str, semester: int) -> float:
-    pass
-    #TODO 3.1.2
 
     if semester < 1:
         return -1
@@ -227,4 +221,3 @@ if __name__ == "__main__":
     import sys
     if len(sys.argv)>1:
         testPrintEventsList(sys.argv[1])
-    print("pass")
